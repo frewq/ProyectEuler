@@ -10,17 +10,17 @@
 
 // 1000 - (c ^ 2) = a^2 + b^2;
 
-let aa = 0;
-let bb = 0;
-let cc = 0;
-let resultado = 0;
+let aa = 0,
+  bb = 0,
+  cc = 0,
+  resultado = 0;
 
-for (let c = 3; c < 1000; c++) {
-  cc = Math.pow(c, 2);
-  for (let a = 1; a <= 1000; a++) {
-    aa = Math.pow(a, 2);
-    for (let b = 2; b <= 1000; b++) {
-      bb = Math.pow(b, 2);
+for (let a = 3; a < 1000; a++) {
+  aa = Math.pow(a, 2);
+  for (let b = 1; b <= 1000; b++) {
+    bb = Math.pow(b, 2);
+    for (let c = 2; c <= 1000; c++) {
+      cc = Math.pow(c, 2);
       if (aa + bb == cc && a + b + c == 1000 && a < b && b < c) {
         resultado = a * b * c;
         console.log(
@@ -28,6 +28,7 @@ for (let c = 3; c < 1000; c++) {
             b +
             c}, a * b * c = ${resultado}`
         );
+        break;
       }
     }
   }
