@@ -12,28 +12,21 @@
 
 // NOTE: Once the chain starts the terms are allowed to go above one million.
 
-let numero = 0;
-let contador = 1;
-let contadorFinal = 0;
-let Collatz = 0;
+let contador = 1
+let numero = contadorFinal = Collatz = 0
 
 for (let i = 2; i < 1000000; i++) {
-  numero = i;
-  contador = 1;
+  numero = i
+  contador = 1
 
   while (numero != 1) {
-
-    if (numero % 2 == 0) {
-      numero = numero / 2;
-    } else {
-      numero = numero * 3 + 1;
-    }
-    contador++;
+    numero = numero % 2 == 0 ? numero / 2 : numero * 3 + 1
+    contador++
 
     if (contador > contadorFinal) {
-      contadorFinal = contador;
+      contadorFinal = contador
       Collatz = i
     }
   }
 }
-console.log(Collatz, contadorFinal);
+console.log(Collatz, contadorFinal)
